@@ -1,0 +1,29 @@
+<nav class="navbar sticky-top">
+  <div class="container">
+    <%= image_tag "Awesome.png", alt: "Logo", width: 150 %>
+    <div>
+    <button type="button" class="button">View Lists</button>
+    <button type="button" class="button">New List</button>
+    </div>
+  </div>
+</nav>
+
+<div class="banner">
+  <div class="container">
+    <h1>Keep track of your Movielists</h1>
+  </div>
+</div>
+  <div class="container my-3 ">
+    <h2>My Lists</h2>
+    <%= simple_form_for(@list) do |f| %>
+     <%= f.input :name %>
+     <%= f.submit class:"button" %>
+    <% end %>
+  </div>
+  <div class="container">
+  <% @lists.each do |list| %>
+    <div class="card-category m-3" style="background-color: white";>
+  <%= list.name  %>
+  <% end %>
+</div>
+  </div>

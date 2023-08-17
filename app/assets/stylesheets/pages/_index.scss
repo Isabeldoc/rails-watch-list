@@ -1,2 +1,35 @@
 // Import page-specific CSS files here.
 @import "home";
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), asset-url("movies.png");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.navbar button {
+  background: none;
+}
+
+.button {
+  background: $gradient;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 900;
+  border:none;
+}
+
+.container {
+  justify-content: space-between;
+}
+
+h2{
+  color: white;
+}
