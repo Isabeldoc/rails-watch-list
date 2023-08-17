@@ -13,6 +13,11 @@ class ListsController < ApplicationController
     end
   end
 
+  def show
+    @list = List.find(params[:id])
+    @movies = Movie.all
+  end
+
   private
 
   def list_params
