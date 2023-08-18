@@ -1,33 +1,30 @@
-<nav class="navbar sticky-top">
-  <div class="container">
-    <%= image_tag "Awesome.png", alt: "Logo", width: 150 %>
-    <div>
-    <button type="button" class="button">View Lists</button>
-    <button type="button" class="button">New List</button>
-    </div>
-  </div>
-</nav>
-
 <div class="banner">
-  <div class="container">
-    <h1>Keep track of your Movielists</h1>
+  <div class="container d-flex">
+    <div>
+      <h1>Keep track of your Movielists</h1>
+    </div>
+   <div class=" flex-shrink-1 my-3 p-3" style="background-color: rgba(255,255,255,0.8); border-radius: 15px;">
+      <h2>Add a new Movielist</h2>
+        <%= simple_form_for(@list) do |f| %>
+        <%= f.input :name, class:"form-control" %>
+        <%= f.submit class:"button" %>
+        <% end %>
+    </div>
   </div>
 </div>
-  <div class="container">
-    <h2>My Lists</h2>
-    <%= simple_form_for(@list) do |f| %>
-     <%= f.input :name, class:"form-control" %>
-     <%= f.submit class:"button" %>
-    <% end %>
-  </div>
 
- <div class="row row-cols-1 row-cols-md-3 my-3">
-  <% @lists.each do |list| %>
-  <div class="container">
-    <div class="card-category mx-3">
-      <%= list.name  %>
-      <a href="lists/<%= list.id %>"> See more</a>
+<div class="container">
+<h2>All Movielists</h2>
+  <div class="row row-cols-1 row-cols-md-3 my-3">
+    <% @lists.each do |list| %>
+      <div class="container">
+        <div class="card-category my-3 ">
+          <%= list.name  %>
+          <div>
+          <a href="lists/<%= list.id %>" class="button m-3"> See List</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
     </div>
 </div>
-  <% end %>
-  </div>

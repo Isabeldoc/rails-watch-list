@@ -9,8 +9,15 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body style="background-color: #141414">
+    <nav class="navbar sticky-top">
+    <div class="container">
+      <%= image_tag "Awesome.png", alt: "Logo", width: 150 %>
+      <div>
+      <%= link_to 'All Lists', lists_path , :class => "btn btn-outline", :style=> "color: white;"%>
+      </div>
+    </div>
+  </nav>
     <%= yield %>
   </body>
 </html>

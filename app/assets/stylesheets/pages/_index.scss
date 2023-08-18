@@ -24,14 +24,13 @@
   padding: 10px;
   font-weight: 900;
   border:none;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  text-decoration: none;
 }
 
 .container {
   justify-content: space-between;
-}
-
-h2{
-  color: white;
 }
 
 .card-category {
@@ -48,4 +47,10 @@ h2{
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 16px;
+  }
 }

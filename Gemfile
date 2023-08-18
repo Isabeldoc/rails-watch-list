@@ -26,6 +26,8 @@ gem "font-awesome-sass", "~> 6.1"
 
 gem "simple_form"
 
+gem "dotenv-rails"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

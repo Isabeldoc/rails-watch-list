@@ -1,20 +1,26 @@
-<h1 style="color: white"><%= @lists.name %></h1>
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="container">
   <h1 style="color: white"><%= @lists.name %></h1>
-  <% @lists.bookmarks.each do |movie| %>
-    <%= movie.find(params[:list_id]) %>
-      <div class="col">
-        <div class="card h-100">
-          <img src="<%= movie.poster_url %>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= movie.title %></h5>
-            <p class="card-text"><%= movie.overview %></p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+
+  <%= link_to 'new bookmark', new_list_bookmark_path(@lists), :class => "button my-3"%>
+
+  <%= link_to 'Homepage', lists_path , :class => "button my-3"%>
+
+  <div class="row row-cols-3 row-cols-md-3 g-4">
+    <% @lists.bookmarks.each do |bookmark| %>
+        <div class="col">
+          <div class="card h-100">
+            <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title"><%= bookmark.movie.title %></h5>
+              <p class="card-text"><%= bookmark.movie.overview %></p>
+              <%= link_to "Delete", bookmark_path(bookmark),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><%= bookmark.comment %></small>
+            </div>
           </div>
         </div>
-      </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
+</div>

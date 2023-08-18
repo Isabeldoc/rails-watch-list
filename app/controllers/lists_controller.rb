@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   end
 
   def create
+    @lists = List.all
     @list = List.new(list_params)
     if @list.save
       redirect_to list_path(@list)
