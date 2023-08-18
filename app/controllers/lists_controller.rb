@@ -14,8 +14,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
-    @movies = Movie.all
+    @lists = List.find(params[:id])
   end
 
   private
